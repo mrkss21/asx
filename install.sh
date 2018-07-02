@@ -9,7 +9,23 @@ chmod -R 755 /root/.arktur
 GEN_PASS=`pwgen -1 20 -n`
 IP_ADD=`curl ipinfo.io/ip`
 echo -e "rpcuser=arkturrpc\nrpcpassword=${GEN_PASS}\nserver=1\nlisten=1\nmaxconnections=64\ndaemon=1\nrpcallowip=127.0.0.1\nexternalip=${IP_ADD}" > /root/.arktur/arktur.conf
-arkturd
+name=arktur
+daemon=arkturd
+cat << EOF | sudo tee /etc/systemd/system/arktur@root.service
+[Unit]
+Description=arktur daemon
+[Service]
+User=root
+Type=forking
+ExecStart=/usr/local/bin/arktur -daemon
+Restart=always
+RestartSec=20
+[Install]
+WantedBy=default.target
+EOF
+sudo systemctl enable arktur@$USER
+sleep 3
+sudo systemctl start arktur@$USER
 sleep 10
 masternodekey=$(arktur-cli masternode genkey)
 arktur-cli stop
