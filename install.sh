@@ -4,6 +4,7 @@ sudo wget https://github.com/Arkturdev/Arktur-coin/releases/download/1.1.1/Arktu
 sudo tar zxfv Arkturcoin-Ubuntu-daemon-1.1.1.tgz
 sudo chmod -R 755 arktur*
 sudo rm Arkturcoin-Ubuntu-daemon-1.1.1.tgz
+cd
 mkdir /root/.arktur
 chmod -R 755 /root/.arktur
 GEN_PASS=`pwgen -1 20 -n`
