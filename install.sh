@@ -17,7 +17,7 @@ Description=arktur daemon
 [Service]
 User=root
 Type=forking
-ExecStart=/usr/local/bin/arktur -daemon
+ExecStart=/usr/local/bin/arkturd -daemon
 Restart=always
 RestartSec=20
 [Install]
