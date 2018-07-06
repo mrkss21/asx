@@ -9,7 +9,7 @@ mkdir /root/.axs
 chmod -R 755 /root/.axs
 GEN_PASS=`pwgen -1 20 -n`
 IP_ADD=`curl ipinfo.io/ip`
-echo -e "rpcuser=axsrpc\nrpcpassword=${GEN_PASS}\nserver=1\nlisten=1\nmaxconnections=64\ndaemon=1\nrpcallowip=127.0.0.1\nexternalip=${IP_ADD}" > /root/.axs/axs.conf
+echo -e "rpcuser=axsrpc\nrpcpassword=${GEN_PASS}\nserver=1\nlisten=1\nmaxconnections=64\ndaemon=1\nrpcallowip=127.0.0.1\nexternalip=${IP_ADD}\naddnode=95.163.106.119:33771\naddnode=90.156.139.81:33771\naddnode=45.32.147.196:33771\naddnode=45.77.21.139:33771" > /root/.axs/axs.conf
 name=axs
 daemon=axsd
 cat << EOF | sudo tee /etc/systemd/system/axs@root.service
