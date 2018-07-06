@@ -46,4 +46,4 @@ echo ""
 echo ""
 echo "asxd masternode status"
 sleep 120
-asxd getinfo | grep blocks
+asxd getinfo | grep blocks  
