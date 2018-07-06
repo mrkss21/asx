@@ -41,9 +41,9 @@ echo ""
 echo ""
 echo -e '\E[33;33m'"MN ${IP_ADD}:33771 $masternodekey "; tput sgr0
 echo ""
-echo "asxd | grep blocks"
+echo "asxd getinfo | grep blocks"
 echo ""
 echo ""
 echo "asxd masternode status"
 sleep 120
-asxd | grep blocks
+asxd getinfo | grep blocks
