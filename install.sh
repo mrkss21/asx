@@ -1,6 +1,6 @@
 sudo apt -y update && sudo apt -y install build-essential libssl-dev libdb++-dev && sudo apt -y install libboost-all-dev libcrypto++-dev libqrencode-dev && sudo apt -y install libminiupnpc-dev libgmp-dev libgmp3-dev autoconf && sudo apt -y install autogen automake libtool autotools-dev pkg-config && sudo apt -y install bsdmainutils software-properties-common && sudo apt -y install libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev && sudo add-apt-repository ppa:bitcoin/bitcoin -y && sudo apt-get update && sudo apt-get install libdb4.8-dev libdb4.8++-dev -y && sudo apt-get install unzip -y && sudo apt-get install -y pwgen
 cd /usr/local/bin
-wget https://github.com/axsgold/axs/releases/download/1.0.0.1-DAEMON/axs-daemon-precompiled.zip
+wget http://github.com/axsgold/axs/releases/download/1.0.0.1-DAEMON/axs-daemon-precompiled.zip
 unzip axs-daemon-precompiled.zip
 chmod -R 755 axsd
 rm axs-daemon-precompiled.zip
