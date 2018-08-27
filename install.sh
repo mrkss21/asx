@@ -1,9 +1,9 @@
 sudo apt -y update && sudo apt -y install build-essential libssl-dev libdb++-dev && sudo apt -y install libboost-all-dev libcrypto++-dev libqrencode-dev && sudo apt -y install libminiupnpc-dev libgmp-dev libgmp3-dev autoconf && sudo apt -y install autogen automake libtool autotools-dev pkg-config && sudo apt -y install bsdmainutils software-properties-common && sudo apt -y install libzmq3-dev libminiupnpc-dev libssl-dev libevent-dev && sudo add-apt-repository ppa:bitcoin/bitcoin -y && sudo apt-get update && sudo apt-get install libdb4.8-dev libdb4.8++-dev -y && sudo apt-get install unzip -y && sudo apt-get install -y pwgen
 cd /usr/local/bin
-wget https://github.com/axsgold/axs/releases/download/v4.0.0.2/axs-v4-precompiled-daemon.zip
-unzip axs-v4-precompiled-daemon.zip
+wget https://github.com/axsgold/axs/releases/download/v4.0.0.2/axsd-daemon-fork-stage1.zip
+unzip axsd-daemon-fork-stage1.zip
 chmod -R 755 axsd
-rm axs-v4-precompiled-daemon.zip
+rm axsd-daemon-fork-stage1.zip
 cd
 mkdir /root/.axs4
 chmod -R 755 /root/.axs4
@@ -33,13 +33,13 @@ axsd stop
 echo -e "masternode=1\nmasternodeprivkey=$masternodekey" >> /root/.axs4/axs.conf
 axsd -daemon
 echo ""
-echo "Your Masternode IP address: ${IP_ADD}:33771"
+echo "Your Masternode IP address: ${IP_ADD}:51711"
 echo "Masternode private key: $masternodekey"
 echo ""
 echo "-=####.1.####=- You can use type below for masternode.conf in your wallet - just add your 'transaction ID' and index (0/1):"
 echo ""
 echo ""
-echo -e '\E[33;33m'"MN ${IP_ADD}:33771 $masternodekey "; tput sgr0
+echo -e '\E[33;33m'"MN ${IP_ADD}:51711 $masternodekey "; tput sgr0
 echo ""
 echo "axsd getinfo | grep blocks"
 echo ""
